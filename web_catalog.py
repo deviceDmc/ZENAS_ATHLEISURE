@@ -27,4 +27,7 @@ color_selected = st.selectbox (
 image_url=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'FILE_URL'].iloc[0]
 st.image(image_url)
 
-st.write(image_url)
+st.write("Our worm, confortable, " + color_selected + " swetsuit!")
+st.write(' ')
+price=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'PRICE'].iloc[0]
+st.write(price)
