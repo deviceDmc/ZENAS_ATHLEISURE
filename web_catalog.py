@@ -6,10 +6,7 @@ import requests
 
 # Write directly to the app
 st.title(f" Zena's Web Catalog ")
-st.write(
-  """Pick a swetsuit color of style!
-  """
-)
+
 cnx= st.connection("snowflake")
 session = cnx.session()
 
@@ -26,5 +23,8 @@ color_selected = st.selectbox (
 "Pick a swetsuit color of style!"
 , my_dataframe
 )
-st.stop()
+#st.stop()
 
+image_url=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'FILE_URL'].iloc[0]
+
+st.write(image_url)
