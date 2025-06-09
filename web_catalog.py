@@ -20,14 +20,15 @@ pd_df= my_dataframe.to_pandas()
 #st.stop()
 
 color_selected = st.selectbox (
-"Pick a swetsuit color of style!"
+"Pick a sweatsuit color of style!"
 , my_dataframe
+, unique().tolist()
 )
 #st.stop()
 image_url=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'FILE_URL'].iloc[0]
 st.image(image_url)
 
-st.write("Our worm, confortable, " + color_selected + " swetsuit!")
+st.write("Our warm, confortable, " + color_selected + " sweatsuit!")
 st.write(' ')
 price=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'PRICE'].iloc[0]
 st.write("Price: " + str(price))
