@@ -24,7 +24,7 @@ color_selected = st.selectbox (
 , my_dataframe
 )
 #st.stop()
-
 image_url=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'FILE_URL'].iloc[0]
+st.image(image_url)
 
 st.write(image_url)
