@@ -14,8 +14,7 @@ cnx= st.connection("snowflake")
 session = cnx.session()
 
 #conert de snowpark dataframe to pandas dataframe so we can use de LOC funciton
-my_dataframe = session.table("ZENAS_ATHLEISURE_DB.PRODUCTS.CATALOG_FOR_WEBSITE").
-select(col('COLOR_OR_STYLE'), col('FILE_NAME'), col('FILE_URL'), col('PRICE'), col('SIZE_LIST'), col('UPSELL_PRODUCT_DESC'))
+my_dataframe = session.table("ZENAS_ATHLEISURE_DB.PRODUCTS.CATALOG_FOR_WEBSITE").select(col('COLOR_OR_STYLE'), col('FILE_NAME'), col('FILE_URL'), col('PRICE'), col('SIZE_LIST'), col('UPSELL_PRODUCT_DESC'))
 st.dataframe(data=my_dataframe, use_container_width=True)
 st.stop()
 
