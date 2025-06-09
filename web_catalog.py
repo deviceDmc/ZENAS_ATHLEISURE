@@ -30,7 +30,7 @@ st.image(image_url)
 st.write("Our worm, confortable, " + color_selected + " swetsuit!")
 st.write(' ')
 price=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'PRICE'].iloc[0]
-st.write("Price: " + price)
+st.write("Price: " + str(price))
 st.write(' ')
 size_list=pd_df.loc[pd_df['COLOR_OR_STYLE'] == color_selected, 'SIZE_LIST'].iloc[0]
 st.write(' ')
